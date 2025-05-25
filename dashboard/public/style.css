@@ -2,22 +2,25 @@
 
 :root {
     /* Light Theme Colors */
-    --primary-color: #3b82f6; /* blue-500 */
-    --primary-hover: #2563eb; /* blue-600 */
-    --secondary-color: #64748b; /* slate-500 */
-    --success-color: #10b981; /* emerald-500 */
-    --warning-color: #f59e0b; /* amber-500 */
-    --error-color: #ef4444;   /* red-500 */
-    --info-color: #06b6d4;    /* cyan-500 */
+    --primary-color: #009688; /* Teal 500 */
+    --primary-hover: #00796B; /* Teal 700 */
+    --primary-light: #B2DFDB; /* Teal 100 */
+    --secondary-color: #607D8B; /* Blue Grey 500 */
+    --secondary-dark: #455A64; /* Blue Grey 700 */
+    --secondary-light: #CFD8DC; /* Blue Grey 100 */
+    --success-color: #FF4081; /* Pink A200 */
+    --warning-color: #FFC107; /* Amber 500 */
+    --error-color: #F44336;   /* Red 500 */
+    --info-color: #03A9F4;    /* Light Blue 500 */
 
-    --bg-primary: #ffffff;
-    --bg-secondary: #f8fafc; /* slate-50 */
-    --bg-tertiary: #f1f5f9;  /* slate-100 */
-    --text-primary: #1e293b; /* slate-800 */
-    --text-secondary: #475569; /* slate-600 */
-    --text-muted: #94a3b8;   /* slate-400 */
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #ECEFF1; /* Blue Grey 50 */
+    --bg-tertiary: #CFD8DC;  /* Blue Grey 100 */
+    --text-primary: #212121; /* Almost Black */
+    --text-secondary: #757575; /* Dark Grey */
+    --text-muted: #9E9E9E;   /* Medium Grey */
 
-    --border-color: #e2e8f0; /* slate-200 */
+    --border-color: #B0BEC5; /* Blue Grey 200 */
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -30,18 +33,18 @@
 
 /* Dark Theme */
 body.dark-theme {
-    --primary-color: #60a5fa; /* blue-400 */
-    --primary-hover: #3b82f6; /* blue-500 */
-    --secondary-color: #94a3b8; /* slate-400 */
+    --primary-color: #4DB6AC; /* Teal 300 */
+    --primary-hover: #26A69A; /* Teal 400 */
+    --secondary-color: #90A4AE; /* Blue Grey 300 */
 
-    --bg-primary: #0f172a;   /* slate-900 */
-    --bg-secondary: #1e293b; /* slate-800 */
-    --bg-tertiary: #334155;  /* slate-700 */
-    --text-primary: #f1f5f9;  /* slate-100 */
-    --text-secondary: #cbd5e1; /* slate-300 */
-    --text-muted: #64748b;   /* slate-500 */
+    --bg-primary: #263238;   /* Blue Grey 900 */
+    --bg-secondary: #37474F; /* Blue Grey 800 */
+    --bg-tertiary: #455A64;  /* Blue Grey 700 */
+    --text-primary: #FFFFFF;  /* White */
+    --text-secondary: #B0BEC5; /* Blue Grey 200 */
+    --text-muted: #78909C;   /* Blue Grey 400 */
 
-    --border-color: #334155; /* slate-700 */
+    --border-color: #546E7A; /* Blue Grey 600 */
 }
 
 /* Reset and Base Styles */
@@ -116,6 +119,11 @@ body {
     background-color: var(--bg-tertiary); /* Subtle background on hover/active */
 }
 
+.nav-link:focus {
+    outline: none; /* Remove default outline if adding box-shadow */
+    box-shadow: 0 0 0 3px rgba(178, 223, 219, 0.7); /* Using --primary-light with opacity */
+}
+
 .user-menu {
     display: flex;
     align-items: center;
@@ -138,6 +146,15 @@ body {
     background-color: var(--bg-tertiary);
 }
 
+.theme-toggle:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(178, 223, 219, 0.7); /* Using --primary-light with opacity */
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
 .user-avatar {
     width: 2.5rem;
     height: 2.5rem;
@@ -149,6 +166,15 @@ body {
     color: white;
     cursor: pointer;
     font-size: 1.2rem;
+}
+
+.user-avatar:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(178, 223, 219, 0.7); /* Using --primary-light with opacity */
+}
+
+.user-avatar:hover {
+    transform: scale(1.05);
 }
 
 /* Main Content */
@@ -185,9 +211,9 @@ body {
 
 .prompt-input {
     width: 100%;
-    padding: 1.25rem; /* Increased padding */
+    padding: 1rem; /* Adjusted padding */
     border: 1px solid var(--border-color); /* Thinner border */
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-md); /* Adjusted border-radius */
     background-color: var(--bg-secondary);
     color: var(--text-primary);
     font-size: 1rem;
@@ -196,10 +222,14 @@ body {
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+.prompt-input:hover {
+    border-color: var(--secondary-color); /* Or a slightly darker shade of --border-color */
+}
+
 .prompt-input:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2); /* Focus ring */
+    box-shadow: 0 0 0 3px rgba(0, 150, 136, 0.2); /* Focus ring using Teal 500 */
 }
 
 .prompt-input::placeholder {
@@ -216,7 +246,7 @@ body {
     background-color: var(--primary-color);
     color: white;
     border: none;
-    padding: 0.875rem 1.75rem; /* Adjusted padding */
+    padding: 0.75rem 1.5rem; /* Adjusted padding to standard */
     border-radius: var(--radius-md);
     font-weight: 600;
     font-size: 1rem; /* Consistent font size */
@@ -233,6 +263,11 @@ body {
 }
 .create-btn:active {
     transform: translateY(0px);
+}
+
+.create-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(178, 223, 219, 0.7); /* Using --primary-light with opacity */
 }
 
 
@@ -271,6 +306,15 @@ body {
     box-shadow: var(--shadow-md);
 }
 
+.template-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(178, 223, 219, 0.7); /* Using --primary-light with opacity */
+}
+
+.template-btn:active {
+    transform: translateY(-1px); /* Slightly press from hover state */
+}
+
 .template-btn i {
     font-size: 1.25rem;
     color: var(--primary-color);
@@ -300,7 +344,7 @@ body {
 }
 
 .filter-select {
-    padding: 0.625rem 1rem; /* Adjusted padding */
+    padding: 0.75rem 1rem; /* Adjusted padding */
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
     background-color: var(--bg-secondary);
@@ -344,13 +388,14 @@ body {
     display: inline-flex; /* For icon alignment */
     align-items: center;
     gap: 0.375rem; /* Adjusted gap */
-    color: white; /* Text color for status badges */
+    /* Default text color for status badges can be white, but overridden for specific statuses if needed */
+    color: white;
 }
 
-.status-live { background-color: var(--success-color); }
-.status-deploying { background-color: var(--warning-color); }
-.status-coding { background-color: var(--info-color); }
-.status-failed { background-color: var(--error-color); }
+.status-live { background-color: var(--success-color); color: #212121; /* Explicit dark text for this light background */ }
+.status-deploying { background-color: var(--warning-color); color: #212121; /* Explicit dark text for this light background */ }
+.status-coding { background-color: var(--info-color); color: white; /* Explicit white text, contrast checked */ }
+.status-failed { background-color: var(--error-color); color: white; /* Explicit white text, contrast checked */ }
 
 .project-content {
     flex-grow: 1; /* Allow content to take available space */
@@ -409,6 +454,11 @@ body {
     text-decoration: underline; /* Add underline on hover */
 }
 
+.link-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(178, 223, 219, 0.7); /* Using --primary-light with opacity */
+}
+
 .project-actions {
     display: flex;
     gap: 0.5rem;
@@ -420,7 +470,7 @@ body {
     background: transparent; /* Fully transparent */
     border: 1px solid var(--border-color);
     color: var(--text-secondary);
-    padding: 0.5rem;
+    padding: 0.625rem; /* Increased padding */
     border-radius: var(--radius-md);
     cursor: pointer;
     transition: all 0.2s ease;
@@ -431,6 +481,15 @@ body {
     color: var(--primary-color);
     border-color: var(--primary-color);
     background-color: var(--bg-tertiary); /* Subtle background on hover */
+}
+
+.action-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(178, 223, 219, 0.7); /* Using --primary-light with opacity */
+}
+
+.action-btn:active {
+    transform: scale(0.95);
 }
 
 /* Progress Bar */
@@ -512,6 +571,15 @@ body {
 .close-btn:hover {
     color: var(--text-primary);
     background-color: var(--bg-tertiary);
+}
+
+.close-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(178, 223, 219, 0.7); /* Using --primary-light with opacity */
+}
+
+.close-btn:active {
+    transform: scale(0.95);
 }
 
 /* Logs */
