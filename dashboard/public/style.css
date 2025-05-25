@@ -1,0 +1,669 @@
+/* Epic Tech AI Dev 2.0 - Dashboard Styles */
+
+:root {
+    /* Light Theme Colors */
+    --primary-color: #3b82f6; /* blue-500 */
+    --primary-hover: #2563eb; /* blue-600 */
+    --secondary-color: #64748b; /* slate-500 */
+    --success-color: #10b981; /* emerald-500 */
+    --warning-color: #f59e0b; /* amber-500 */
+    --error-color: #ef4444;   /* red-500 */
+    --info-color: #06b6d4;    /* cyan-500 */
+
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc; /* slate-50 */
+    --bg-tertiary: #f1f5f9;  /* slate-100 */
+    --text-primary: #1e293b; /* slate-800 */
+    --text-secondary: #475569; /* slate-600 */
+    --text-muted: #94a3b8;   /* slate-400 */
+
+    --border-color: #e2e8f0; /* slate-200 */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+    --radius-sm: 0.375rem; /* 6px */
+    --radius-md: 0.5rem;   /* 8px */
+    --radius-lg: 0.75rem;  /* 12px */
+    --radius-xl: 1rem;     /* 16px */
+}
+
+/* Dark Theme */
+body.dark-theme {
+    --primary-color: #60a5fa; /* blue-400 */
+    --primary-hover: #3b82f6; /* blue-500 */
+    --secondary-color: #94a3b8; /* slate-400 */
+
+    --bg-primary: #0f172a;   /* slate-900 */
+    --bg-secondary: #1e293b; /* slate-800 */
+    --bg-tertiary: #334155;  /* slate-700 */
+    --text-primary: #f1f5f9;  /* slate-100 */
+    --text-secondary: #cbd5e1; /* slate-300 */
+    --text-muted: #64748b;   /* slate-500 */
+
+    --border-color: #334155; /* slate-700 */
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 16px;
+}
+
+.container {
+    max-width: 1280px; /* Increased max-width */
+    margin: 0 auto;
+    padding: 0 1.5rem; /* Increased padding */
+}
+
+/* Header */
+.header {
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0.75rem 0; /* Adjusted padding */
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* Increased gap */
+    font-size: 1.5rem; /* Increased font size */
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.logo i {
+    font-size: 1.75rem; /* Increased icon size */
+}
+
+.nav {
+    display: flex;
+    gap: 1.5rem; /* Adjusted gap */
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-color);
+    background-color: var(--bg-tertiary); /* Subtle background on hover/active */
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: var(--radius-md);
+    transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+    color: var(--primary-color);
+    background-color: var(--bg-tertiary);
+}
+
+.user-avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+/* Main Content */
+.main {
+    padding: 2rem 0;
+}
+
+/* Prompt Section */
+.prompt-section {
+    background-color: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: 2.5rem; /* Increased padding */
+    margin-bottom: 2.5rem; /* Increased margin */
+    box-shadow: var(--shadow-md);
+}
+
+.prompt-section h1 {
+    font-size: 2.25rem; /* Increased font size */
+    font-weight: 700;
+    margin-bottom: 0.75rem; /* Adjusted margin */
+    color: var(--text-primary);
+}
+
+.prompt-section p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-size: 1.125rem; /* Slightly larger */
+}
+
+.prompt-input-container {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.prompt-input {
+    width: 100%;
+    padding: 1.25rem; /* Increased padding */
+    border: 1px solid var(--border-color); /* Thinner border */
+    border-radius: var(--radius-lg);
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    font-size: 1rem;
+    resize: vertical;
+    min-height: 100px; /* Adjusted min-height */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.prompt-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2); /* Focus ring */
+}
+
+.prompt-input::placeholder {
+    color: var(--text-muted);
+}
+
+.create-btn {
+    /* position: absolute; */ /* Making it inline for better flow */
+    /* bottom: 1rem; */
+    /* right: 1rem; */
+    display: block; /* Make it a block to take full width or use flex for alignment */
+    margin-top: 1rem; /* Add some space above */
+    width: auto; /* Or 100% if you want it full width */
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.875rem 1.75rem; /* Adjusted padding */
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 1rem; /* Consistent font size */
+    cursor: pointer;
+    display: inline-flex; /* For icon alignment */
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.create-btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
+}
+.create-btn:active {
+    transform: translateY(0px);
+}
+
+
+/* Templates */
+.templates h3 {
+    margin-bottom: 1rem;
+    font-size: 1.25rem; /* Increased font size */
+    color: var(--text-primary);
+}
+
+.template-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Adjusted minmax */
+    gap: 1rem;
+}
+
+.template-btn {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+    text-align: left; /* Align text to left */
+}
+
+.template-btn:hover {
+    border-color: var(--primary-color);
+    background-color: var(--bg-primary); /* Lighter background on hover */
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.template-btn i {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    width: 24px; /* Fixed width for icon alignment */
+    text-align: center;
+}
+
+/* Projects Section */
+.projects-section {
+    background-color: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: 2.5rem; /* Increased padding */
+    box-shadow: var(--shadow-md);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.section-header h2 {
+    font-size: 1.75rem; /* Increased font size */
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.filter-select {
+    padding: 0.625rem 1rem; /* Adjusted padding */
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* Adjusted minmax */
+    gap: 1.5rem;
+}
+
+.project-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    position: relative;
+    transition: all 0.2s ease;
+    display: flex; /* For better internal layout */
+    flex-direction: column; /* Stack content vertically */
+}
+
+.project-card:hover {
+    transform: translateY(-3px); /* Slightly more lift */
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color); /* Highlight border on hover */
+}
+
+.project-status {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.375rem 0.75rem; /* Adjusted padding */
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem; /* Slightly smaller */
+    font-weight: 600;
+    display: inline-flex; /* For icon alignment */
+    align-items: center;
+    gap: 0.375rem; /* Adjusted gap */
+    color: white; /* Text color for status badges */
+}
+
+.status-live { background-color: var(--success-color); }
+.status-deploying { background-color: var(--warning-color); }
+.status-coding { background-color: var(--info-color); }
+.status-failed { background-color: var(--error-color); }
+
+.project-content {
+    flex-grow: 1; /* Allow content to take available space */
+}
+
+.project-content h3 {
+    font-size: 1.375rem; /* Increased font size */
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    padding-right: 6rem; /* Space for status badge */
+}
+
+.project-content p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    font-size: 0.9rem; /* Slightly smaller description */
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tech-tag {
+    background-color: var(--bg-tertiary);
+    color: var(--text-secondary);
+    padding: 0.25rem 0.625rem; /* Adjusted padding */
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem; /* Smaller tech tags */
+    font-weight: 500;
+}
+
+.project-links {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem; /* Increased margin */
+}
+
+.link-btn {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+    display: inline-flex; /* For icon alignment */
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.875rem;
+    transition: color 0.2s ease;
+}
+
+.link-btn:hover {
+    color: var(--primary-hover);
+    text-decoration: underline; /* Add underline on hover */
+}
+
+.project-actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    margin-top: auto; /* Push actions to the bottom */
+}
+
+.action-btn {
+    background: transparent; /* Fully transparent */
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 0.5rem;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    line-height: 1; /* Ensure icon is centered */
+}
+
+.action-btn:hover {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    background-color: var(--bg-tertiary); /* Subtle background on hover */
+}
+
+/* Progress Bar */
+.progress-bar {
+    width: 100%;
+    height: 0.625rem; /* Slightly thicker */
+    background-color: var(--bg-tertiary);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--primary-color);
+    transition: width 0.5s ease-in-out; /* Smoother transition */
+    border-radius: var(--radius-sm); /* Match parent radius */
+}
+
+.progress-text {
+    font-size: 0.8rem; /* Slightly smaller */
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* Modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Darker overlay */
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem; /* Padding for smaller screens */
+}
+
+.modal-content {
+    background-color: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    width: 90%;
+    max-width: 800px;
+    max-height: 85vh; /* Adjusted max height */
+    overflow: hidden; /* Prevent content overflow */
+    box-shadow: var(--shadow-lg);
+    display: flex; /* For internal layout */
+    flex-direction: column; /* Stack header, content, footer */
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem; /* Adjusted padding */
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-header h3 {
+    font-size: 1.375rem; /* Increased font size */
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.5rem; /* Larger close icon */
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: var(--radius-md);
+    transition: all 0.2s ease;
+    line-height: 1; /* Ensure icon is centered */
+}
+
+.close-btn:hover {
+    color: var(--text-primary);
+    background-color: var(--bg-tertiary);
+}
+
+/* Logs */
+.logs-container {
+    padding: 1.5rem;
+    flex-grow: 1; /* Allow logs to take available space */
+    overflow-y: auto; /* Scroll for logs */
+    font-family: 'SF Mono', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace; /* Monospace font */
+    background-color: var(--bg-secondary);
+    font-size: 0.875rem; /* Consistent log font size */
+}
+
+.log-entry {
+    display: grid;
+    grid-template-columns: auto auto auto 1fr; /* Time, Level, Agent, Message */
+    gap: 0.75rem; /* Adjusted gap */
+    padding: 0.375rem 0; /* Adjusted padding */
+    border-bottom: 1px solid var(--border-color);
+    line-height: 1.5; /* Better readability */
+}
+.log-entry:last-child {
+    border-bottom: none; /* Remove border for last entry */
+}
+
+.log-time {
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.log-level {
+    padding: 0.125rem 0.5rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.7rem; /* Smaller level tags */
+    text-align: center;
+    min-width: 60px;
+    text-transform: uppercase; /* Uppercase level */
+    color: white; /* Text color for levels */
+}
+
+.log-level.info { background-color: var(--info-color); }
+.log-level.success { background-color: var(--success-color); }
+.log-level.error { background-color: var(--error-color); }
+.log-level.warning { background-color: var(--warning-color); }
+
+
+.log-agent {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.log-message {
+    color: var(--text-primary);
+    word-break: break-word; /* Prevent long messages from breaking layout */
+}
+
+/* Responsive Design */
+@media (max-width: 992px) { /* Tablet breakpoint */
+    .nav {
+        gap: 1rem;
+    }
+    .nav-link {
+        padding: 0.5rem 0.75rem;
+    }
+}
+
+
+@media (max-width: 768px) { /* Mobile breakpoint */
+    .header .container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .nav {
+        order: 3; /* Move nav below logo and user menu */
+        width: 100%;
+        justify-content: space-around; /* Distribute nav links */
+        border-top: 1px solid var(--border-color);
+        padding-top: 0.5rem;
+    }
+    .user-menu {
+        order: 2;
+    }
+    .logo {
+        order: 1;
+    }
+
+    .prompt-section {
+        padding: 1.5rem;
+    }
+
+    .prompt-section h1 {
+        font-size: 1.75rem;
+    }
+
+    .create-btn {
+        /* position: static; */ /* Already changed */
+        margin-top: 1rem;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .template-grid {
+        grid-template-columns: 1fr; /* Single column for templates */
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr; /* Single column for projects */
+    }
+
+    .section-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .log-entry {
+        grid-template-columns: 1fr; /* Stack log parts on mobile */
+        gap: 0.25rem;
+    }
+    .log-time, .log-level, .log-agent {
+        margin-right: 0; /* Remove right margin for stacked view */
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.project-card, .prompt-section, .projects-section {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Scrollbar Styling (Optional, for better aesthetics) */
+.logs-container::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.logs-container::-webkit-scrollbar-track {
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-sm);
+}
+
+.logs-container::-webkit-scrollbar-thumb {
+    background: var(--text-muted);
+    border-radius: var(--radius-sm);
+}
+
+.logs-container::-webkit-scrollbar-thumb:hover {
+    background: var(--text-secondary);
+}
