@@ -1,0 +1,31 @@
+{
+  "name": "epic-tech-ai-dev-2.0-poc",
+  "version": "0.0.1",
+  "description": "Epic Tech AI Dev 2.0 - Proof of Concept Server and Files",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sm0k367/epicdev.git"
+  },
+  "keywords": [
+    "ai",
+    "devops",
+    "autonomous",
+    "platform",
+    "proof-of-concept"
+  ],
+  "author": "AI Agent (Conceptual)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sm0k367/epicdev/issues"
+  },
+  "homepage": "https://github.com/Sm0k367/epicdev#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
