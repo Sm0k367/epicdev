@@ -1,0 +1,28 @@
+# This is a .gitignore file for a simple static HTML/CSS/JS project.
+# It's often minimal for such projects unless build tools or specific
+# development artifacts are involved.
+
+# IDE and editor specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# If you were to use a local development server or build tools,
+# you might add their specific output directories or cache files here.
+# For example:
+# node_modules/
+# dist/
+# .cache/
+
+# Log files
+*.log
+logs/
+
+# Any local configuration files not meant for the repository
+.env.local
