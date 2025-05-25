@@ -228,8 +228,8 @@ body {
 
 .prompt-input:focus {
     outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(0, 150, 136, 0.2); /* Focus ring using Teal 500 */
+    border-color: var(--primary-color); /* Keep border color change for consistency with original intent */
+    box-shadow: 0 0 0 3px rgba(178, 223, 219, 0.7); /* Unified focus shadow using --primary-light */
 }
 
 .prompt-input::placeholder {
@@ -351,6 +351,17 @@ body {
     color: var(--text-primary);
     cursor: pointer;
     font-size: 0.9rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease; /* Added transition */
+}
+
+.filter-select:hover {
+    border-color: var(--primary-color);
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: var(--primary-color); /* Keep border consistent with other inputs on focus if desired */
+    box-shadow: 0 0 0 3px rgba(178, 223, 219, 0.7); /* Unified focus shadow */
 }
 
 /* Projects Grid */
